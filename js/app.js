@@ -1,16 +1,14 @@
-function showPage(id){
+function openPage(page){
 
-document.querySelectorAll(".page").forEach(p=>{
-
-p.classList.add("hidden")
-
+document.querySelectorAll("section").forEach(s=>{
+s.style.display="none"
 })
 
-document.getElementById(id).classList.remove("hidden")
+document.getElementById(page).style.display="block"
 
 }
 
-document.getElementById("darkBtn").onclick=function(){
+document.getElementById("darkToggle").onclick=function(){
 
 document.body.classList.toggle("dark")
 

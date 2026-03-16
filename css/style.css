@@ -178,3 +178,52 @@ font-weight:600;
 background:#1e293b;
 
 }
+
+/* DARK MODE */
+
+.dark{
+
+background:#0f172a;
+
+color:white;
+
+}
+
+.dark header{
+
+background:#020617;
+
+}
+
+.dark .card{
+
+background:#1e293b;
+
+color:white;
+
+}
+
+.dark input,
+.dark textarea{
+
+background:#0f172a;
+
+color:white;
+
+border:1px solid #334155;
+
+}
+
+.dark a{
+
+color:#60a5fa;
+
+}
+
+.dark footer{
+
+background:#020617;
+
+color:white;
+
+}

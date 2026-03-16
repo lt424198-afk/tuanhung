@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+
+<meta charset="UTF-8">
 
 <link rel="stylesheet" href="../style.css">
 
@@ -10,13 +11,33 @@
 
 <body>
 
-<h1>Flashcard</h1>
+<header>
 
-<div id="card" onclick="flip()">
+<h1>📚 StudyHub</h1>
 
-Click để học
+<nav>
+
+<a class="home" href="../index.html">Trang chủ</a>
+<a href="notes.html">Ghi chú</a>
+<a href="quiz.html">Quiz</a>
+<a href="flashcard.html">Flashcard</a>
+<a href="schedule.html">Thời khóa biểu</a>
+
+</nav>
+
+</header>
+
+<section class="dashboard">
+
+<div class="card">
+
+<h2>📚 Flashcard</h2>
+
+<div id="card" onclick="flip()">Click để học</div>
 
 </div>
+
+</section>
 
 <script>
 
@@ -31,7 +52,6 @@ let cards=[
 ]
 
 let i=0
-
 let flipped=false
 
 function flip(){
@@ -63,5 +83,4 @@ if(i>=cards.length) i=0
 </script>
 
 </body>
-
 </html>

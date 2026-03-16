@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+
+<meta charset="UTF-8">
 
 <link rel="stylesheet" href="../style.css">
 
@@ -10,11 +11,35 @@
 
 <body>
 
-<h1>Quiz</h1>
+<header>
+
+<h1>📚 StudyHub</h1>
+
+<nav>
+
+<a class="home" href="../index.html">Trang chủ</a>
+<a href="notes.html">Ghi chú</a>
+<a href="quiz.html">Quiz</a>
+<a href="flashcard.html">Flashcard</a>
+<a href="schedule.html">Thời khóa biểu</a>
+
+</nav>
+
+</header>
+
+<section class="dashboard">
+
+<div class="card">
+
+<h2>🧠 Quiz</h2>
 
 <p id="question"></p>
 
 <button onclick="next()">Câu hỏi mới</button>
+
+</div>
+
+</section>
 
 <script>
 
@@ -39,5 +64,4 @@ document.getElementById("question").innerText=q
 </script>
 
 </body>
-
 </html>

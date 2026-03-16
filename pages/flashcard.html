@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<h1>Flashcard</h1>
+
+<div id="card" onclick="flip()">
+
+Click để học
+
+</div>
+
+<script>
+
+let cards=[
+
+["HTML","Ngôn ngữ tạo cấu trúc web"],
+
+["CSS","Thiết kế giao diện"],
+
+["JS","Tạo tương tác"]
+
+]
+
+let i=0
+
+let flipped=false
+
+function flip(){
+
+let card=document.getElementById("card")
+
+if(!flipped){
+
+card.innerText=cards[i][0]
+
+flipped=true
+
+}
+
+else{
+
+card.innerText=cards[i][1]
+
+flipped=false
+
+i++
+
+if(i>=cards.length) i=0
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

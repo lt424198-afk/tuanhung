@@ -91,3 +91,28 @@ if(localStorage.getItem("mode")==="dark"){
 document.body.classList.add("dark")
 
 }
+function renderNotes(){
+
+let list=document.getElementById("noteList")
+
+list.innerHTML=""
+
+notes.forEach((n,i)=>{
+
+let li=document.createElement("li")
+
+li.className="note-item"
+
+li.innerHTML=`
+<span class="${n.star?'starred':''}">${n.text}</span>
+<div>
+<button onclick="toggleStar(${i})">⭐</button>
+<button onclick="deleteNote(${i})">🗑</button>
+</div>
+`
+
+list.appendChild(li)
+
+})
+
+}

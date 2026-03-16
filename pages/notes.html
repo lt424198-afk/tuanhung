@@ -2,13 +2,9 @@
 <html lang="vi">
 
 <head>
-
 <meta charset="UTF-8">
-
 <title>Ghi chú</title>
-
 <link rel="stylesheet" href="../style.css">
-
 </head>
 
 <body>
@@ -18,24 +14,27 @@
 <h1>📚 StudyHub</h1>
 
 <nav>
-
-<a class="home" href="../index.html">Trang chủ</a>
+<a href="../index.html">Trang chủ</a>
 <a href="notes.html">Ghi chú</a>
 <a href="quiz.html">Quiz</a>
 <a href="flashcard.html">Flashcard</a>
 <a href="schedule.html">Thời khóa biểu</a>
-
 </nav>
+
+<button onclick="toggleMode()">🌙</button>
 
 </header>
 
+
+<main>
+
 <section class="dashboard">
 
-<div class="card notes-container">
+<div class="card">
 
 <h2>📝 Ghi chú học tập</h2>
 
-<input id="searchNote" placeholder="Tìm ghi chú..." oninput="renderNotes()">
+<input id="searchNote" placeholder="Tìm ghi chú...">
 
 <textarea id="noteInput" placeholder="Viết ghi chú..."></textarea>
 
@@ -47,90 +46,9 @@
 
 </section>
 
-<script>
+</main>
 
-let notes = JSON.parse(localStorage.getItem("notes")) || []
-
-function saveNotes(){
-localStorage.setItem("notes", JSON.stringify(notes))
-}
-
-function addNote(){
-
-let text = document.getElementById("noteInput").value
-
-if(text.trim()==="") return
-
-notes.push({text:text,star:false})
-
-document.getElementById("noteInput").value=""
-
-saveNotes()
-
-renderNotes()
-
-}
-
-function toggleStar(index){
-
-notes[index].star=!notes[index].star
-
-saveNotes()
-
-renderNotes()
-
-}
-
-function deleteNote(index){
-
-notes.splice(index,1)
-
-saveNotes()
-
-renderNotes()
-
-}
-
-function renderNotes(){
-
-let list=document.getElementById("noteList")
-
-let search=document.getElementById("searchNote").value.toLowerCase()
-
-list.innerHTML=""
-
-notes.forEach((n,i)=>{
-
-if(!n.text.toLowerCase().includes(search)) return
-
-let li=document.createElement("li")
-
-li.className="note-item"
-
-li.innerHTML=`
-
-<span class="${n.star?'starred':''}">${n.text}</span>
-
-<div>
-
-<button onclick="toggleStar(${i})">⭐</button>
-
-<button onclick="deleteNote(${i})">🗑</button>
-
-</div>
-
-`
-
-list.appendChild(li)
-
-})
-
-}
-
-renderNotes()
-
-</script>
+<script src="../app.js"></script>
 
 </body>
-
 </html>

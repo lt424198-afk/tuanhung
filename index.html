@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Study Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📚 Study Manager</h1>
+<button id="darkModeBtn">🌙 Dark Mode</button>
+</header>
+
+<section class="todo">
+
+<h2>Bài tập cần làm</h2>
+
+<div class="input-area">
+<input type="text" id="taskInput" placeholder="Nhập bài tập...">
+<button onclick="addTask()">Thêm</button>
+</div>
+
+<ul id="taskList"></ul>
+
+</section>
+
+
+<section class="schedule">
+
+<h2>Thời khóa biểu</h2>
+
+<table>
+
+<tr>
+<th>Môn</th>
+<th>Thời gian</th>
+</tr>
+
+<tr>
+<td>Toán</td>
+<td>7:00 - 8:30</td>
+</tr>
+
+<tr>
+<td>Văn</td>
+<td>8:45 - 10:15</td>
+</tr>
+
+<tr>
+<td>Tiếng Anh</td>
+<td>10:30 - 11:30</td>
+</tr>
+
+<tr>
+<td>Lý</td>
+<td>13:30 - 15:00</td>
+</tr>
+
+</table>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

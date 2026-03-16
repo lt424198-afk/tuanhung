@@ -65,3 +65,8 @@ let val=document.getElementById("progressInput").value
 document.getElementById("progress").style.width=val+"%"
 
 }
+function toggleMode(){
+
+document.body.classList.toggle("dark")
+
+}

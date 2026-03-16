@@ -1,36 +1,20 @@
-/* =========================
-   GLOBAL STYLE
-========================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
 
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+font-family:Segoe UI;
 
-background:linear-gradient(135deg,#eef2ff,#f8fafc);
+background:#f5f7fb;
 
-color:#1e293b;
-
-min-height:100vh;
+margin:0;
 
 }
-
-/* =========================
-   HEADER / NAVBAR
-========================= */
 
 header{
 
-position:sticky;
+background:#4f46e5;
 
-top:0;
+color:white;
 
-z-index:1000;
+padding:20px;
 
 display:flex;
 
@@ -38,368 +22,86 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:16px 40px;
-
-background:rgba(255,255,255,0.75);
-
-backdrop-filter:blur(12px);
-
-box-shadow:0 4px 20px rgba(0,0,0,0.08);
-
-}
-
-/* logo */
-
-header h1{
-
-font-size:22px;
-
-font-weight:700;
-
-color:#4f46e5;
-
-letter-spacing:1px;
-
-}
-
-/* nav */
-
-nav{
-
-display:flex;
-
-gap:22px;
-
 }
 
 nav a{
 
+color:white;
+
+margin:10px;
+
 text-decoration:none;
 
-font-size:15px;
-
 font-weight:500;
 
-color:#475569;
-
-padding:6px 10px;
-
-border-radius:6px;
-
-transition:0.25s;
-
 }
 
-/* hover effect */
+.intro{
 
-nav a:hover{
-
-background:#4f46e5;
-
-color:white;
-
-transform:translateY(-1px);
-
-}
-
-/* home highlight */
-
-nav a.home{
-
-background:#4f46e5;
-
-color:white;
-
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-button{
-
-padding:8px 14px;
-
-border:none;
-
-border-radius:8px;
-
-background:linear-gradient(135deg,#6366f1,#4f46e5);
-
-color:white;
-
-font-weight:500;
-
-cursor:pointer;
-
-transition:0.2s;
-
-}
-
-button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 6px 14px rgba(79,70,229,0.3);
-
-}
-
-/* =========================
-   DASHBOARD GRID
-========================= */
-
-.dashboard{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:28px;
+text-align:center;
 
 padding:40px;
 
 }
 
-/* =========================
-   CARD DESIGN
-========================= */
+.dashboard{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+padding:40px;
+
+}
 
 .card{
 
 background:white;
 
-padding:24px;
+padding:20px;
 
-border-radius:14px;
+border-radius:10px;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-
-transition:0.25s;
-
-}
-
-.card:hover{
-
-transform:translateY(-6px);
-
-box-shadow:0 20px 40px rgba(0,0,0,0.12);
-
-}
-
-.card h2{
-
-margin-bottom:12px;
-
-font-size:18px;
-
-color:#334155;
-
-}
-
-/* =========================
-   INPUT
-========================= */
-
-input{
-
-width:100%;
-
-padding:10px;
-
-margin-top:8px;
-
-margin-bottom:10px;
-
-border-radius:8px;
-
-border:1px solid #e2e8f0;
-
-font-size:14px;
-
-transition:0.2s;
-
-}
-
-input:focus{
-
-outline:none;
-
-border-color:#6366f1;
-
-box-shadow:0 0 0 2px rgba(99,102,241,0.2);
-
-}
-
-/* =========================
-   TODO LIST
-========================= */
-
-ul{
-
-list-style:none;
-
-margin-top:10px;
-
-}
-
-li{
-
-display:flex;
-
-justify-content:space-between;
-
-padding:6px 0;
-
-border-bottom:1px solid #f1f5f9;
-
-font-size:14px;
-
-}
-
-/* =========================
-   TIMER
-========================= */
-
-#timer{
-
-font-size:34px;
-
-font-weight:700;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 
 text-align:center;
-
-margin:15px 0;
-
-color:#4f46e5;
-
-}
-
-/* =========================
-   PROGRESS BAR
-========================= */
-
-.bar{
-
-height:18px;
-
-background:#e2e8f0;
-
-border-radius:20px;
-
-overflow:hidden;
-
-margin-top:10px;
-
-}
-
-#progress{
-
-height:100%;
-
-width:0%;
-
-background:linear-gradient(90deg,#6366f1,#22c55e);
-
-transition:0.4s;
-
-}
-
-/* =========================
-   FLASHCARD
-========================= */
-
-#card{
-
-border:2px dashed #6366f1;
-
-padding:30px;
-
-text-align:center;
-
-font-size:18px;
-
-border-radius:12px;
-
-cursor:pointer;
 
 transition:0.3s;
 
 }
 
-#card:hover{
+.card:hover{
 
-background:#eef2ff;
-
-}
-
-/* =========================
-   DARK MODE
-========================= */
-
-.dark{
-
-background:#0f172a;
-
-color:#e2e8f0;
+transform:translateY(-5px);
 
 }
 
-.dark header{
+.card a{
 
-background:rgba(30,41,59,0.8);
+display:inline-block;
 
-}
+margin-top:10px;
 
-.dark .card{
-
-background:#1e293b;
-
-box-shadow:none;
-
-}
-
-.dark input{
-
-background:#0f172a;
-
-border:1px solid #334155;
+background:#4f46e5;
 
 color:white;
 
-}
+padding:6px 12px;
 
-.dark nav a{
+border-radius:6px;
 
-color:#cbd5f5;
-
-}
-
-.dark nav a:hover{
-
-background:#6366f1;
-
-color:white;
+text-decoration:none;
 
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+footer{
 
-@media(max-width:768px){
-
-header{
-
-flex-direction:column;
-
-gap:10px;
-
-}
-
-.dashboard{
+text-align:center;
 
 padding:20px;
 
-}
+background:#eee;
 
 }

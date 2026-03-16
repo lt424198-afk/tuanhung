@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 
 <head>
 
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="../css/style.css">
+<title>Ghi chú</title>
+
+<link rel="stylesheet" href="../style.css">
 
 </head>
 
@@ -29,13 +31,17 @@
 
 <section class="dashboard">
 
-<div class="card">
+<div class="card notes-container">
 
 <h2>📝 Ghi chú học tập</h2>
 
-<textarea id="note" style="width:100%;height:200px"></textarea>
+<input id="searchNote" placeholder="Tìm ghi chú..." oninput="renderNotes()">
 
-<button onclick="saveNote()">Lưu</button>
+<textarea id="noteInput" placeholder="Viết ghi chú..."></textarea>
+
+<button onclick="addNote()">Thêm ghi chú</button>
+
+<ul id="noteList"></ul>
 
 </div>
 
@@ -43,19 +49,88 @@
 
 <script>
 
-function saveNote(){
+let notes = JSON.parse(localStorage.getItem("notes")) || []
 
-localStorage.setItem("note",
+function saveNotes(){
+localStorage.setItem("notes", JSON.stringify(notes))
+}
 
-document.getElementById("note").value)
+function addNote(){
+
+let text = document.getElementById("noteInput").value
+
+if(text.trim()==="") return
+
+notes.push({text:text,star:false})
+
+document.getElementById("noteInput").value=""
+
+saveNotes()
+
+renderNotes()
 
 }
 
-document.getElementById("note").value=
+function toggleStar(index){
 
-localStorage.getItem("note")||""
+notes[index].star=!notes[index].star
+
+saveNotes()
+
+renderNotes()
+
+}
+
+function deleteNote(index){
+
+notes.splice(index,1)
+
+saveNotes()
+
+renderNotes()
+
+}
+
+function renderNotes(){
+
+let list=document.getElementById("noteList")
+
+let search=document.getElementById("searchNote").value.toLowerCase()
+
+list.innerHTML=""
+
+notes.forEach((n,i)=>{
+
+if(!n.text.toLowerCase().includes(search)) return
+
+let li=document.createElement("li")
+
+li.className="note-item"
+
+li.innerHTML=`
+
+<span class="${n.star?'starred':''}">${n.text}</span>
+
+<div>
+
+<button onclick="toggleStar(${i})">⭐</button>
+
+<button onclick="deleteNote(${i})">🗑</button>
+
+</div>
+
+`
+
+list.appendChild(li)
+
+})
+
+}
+
+renderNotes()
 
 </script>
 
 </body>
+
 </html>

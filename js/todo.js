@@ -30,12 +30,6 @@ list.appendChild(li)
 
 })
 
-document.getElementById("taskCount").innerText=tasks.length
-
-document.getElementById("doneCount").innerText=
-
-tasks.filter(t=>t.done).length
-
 }
 
 function addTask(){
@@ -45,7 +39,6 @@ let input=document.getElementById("taskInput")
 tasks.push({
 
 text:input.value,
-
 done:false
 
 })

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<h1>Quiz</h1>
+
+<p id="question"></p>
+
+<button onclick="next()">Câu hỏi mới</button>
+
+<script>
+
+let questions=[
+
+"HTML dùng để làm gì?",
+
+"CSS viết tắt của gì?",
+
+"JavaScript dùng để làm gì?"
+
+]
+
+function next(){
+
+let q=questions[Math.floor(Math.random()*questions.length)]
+
+document.getElementById("question").innerText=q
+
+}
+
+</script>
+
+</body>
+
+</html>

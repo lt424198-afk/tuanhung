@@ -4,6 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>StudyHub</title>
 
@@ -15,7 +16,7 @@
 
 <header>
 
-<h1>📚 StudyHub</h1>
+<h1>📚 StudyHub - Lớp học trực tuyến</h1>
 
 <nav>
 
@@ -31,53 +32,85 @@
 
 </header>
 
+<main>
+
+<section class="intro">
+
+<h2>📘 Nền tảng học tập của lớp</h2>
+
+<p>
+
+Nơi quản lý bài tập, ghi chú, flashcard và các công cụ học tập cho học sinh.
+
+</p>
+
+</section>
+
+
 <section class="dashboard">
 
 <div class="card">
 
-<h2>📌 Bài tập cần làm</h2>
+<h3>📝 Ghi chú</h3>
 
-<input id="taskInput" placeholder="Nhập bài tập">
+<p>Viết và lưu ghi chú học tập.</p>
 
-<button onclick="addTask()">Thêm</button>
-
-<ul id="taskList"></ul>
+<a href="pages/notes.html">Mở</a>
 
 </div>
 
+
 <div class="card">
 
-<h2>⏱ Pomodoro</h2>
+<h3>🧠 Quiz</h3>
+
+<p>Luyện tập câu hỏi nhanh.</p>
+
+<a href="pages/quiz.html">Làm bài</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 Flashcard</h3>
+
+<p>Ôn tập kiến thức bằng flashcard.</p>
+
+<a href="pages/flashcard.html">Học</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>📅 Thời khóa biểu</h3>
+
+<p>Xem lịch học trong tuần.</p>
+
+<a href="pages/schedule.html">Xem</a>
+
+</div>
+
+
+<div class="card">
+
+<h3>⏱ Pomodoro</h3>
+
+<p>Hẹn giờ tập trung học tập.</p>
 
 <div id="timer">25:00</div>
 
 <button onclick="startTimer()">Start</button>
 
-<button onclick="resetTimer()">Reset</button>
-
 </div>
+
 
 <div class="card">
 
-<h2>📊 Tiến độ học</h2>
+<h3>🧮 Máy tính</h3>
 
-<input id="progressInput" placeholder="Nhập %">
-
-<button onclick="updateProgress()">Cập nhật</button>
-
-<div class="bar">
-
-<div id="progress"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>🧮 Máy tính</h2>
-
-<input id="calc" placeholder="Ví dụ 5+5">
+<input id="calc" placeholder="5+5">
 
 <button onclick="calculate()">=</button>
 
@@ -86,6 +119,14 @@
 </div>
 
 </section>
+
+</main>
+
+<footer>
+
+<p>© StudyHub - Website lớp học</p>
+
+</footer>
 
 <script src="app.js"></script>
 
